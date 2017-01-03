@@ -37,11 +37,22 @@ public class DestinationListFragment extends Fragment {
     }
 
     private class DestinationHolder extends  RecyclerView.ViewHolder{
+        private Destination mDestination;
         public TextView mNameTextView;
+        public TextView mDescriptionTextView;
 
         public DestinationHolder(View itemView){
             super(itemView);
-            mNameTextView = (TextView) itemView;
+            mNameTextView = (TextView) itemView
+                    .findViewById(R.id.list_item_destination_name);
+            mDescriptionTextView = (TextView) itemView
+                    .findViewById(R.id.list_item_destination_description);
+        }
+
+        public void bindDestination(Destination destination){
+            mDestination = destination;
+            mNameTextView.setText(mDestination.getName());
+            mDescriptionTextView.setText(mDestination.getDescription());
         }
     }
 
@@ -57,14 +68,14 @@ public class DestinationListFragment extends Fragment {
         public DestinationHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
             View view = layoutInflater
-                    .inflate(android.R.layout.simple_list_item_1, parent, false);
+                    .inflate(R.layout.list_item_destination, parent, false);
             return new DestinationHolder(view);
         }
 
         @Override
         public void onBindViewHolder(DestinationHolder holder, int position) {
             Destination destination = mDestinations.get(position);
-            holder.mNameTextView.setText(destination.getName());
+            holder.bindDestination(destination);
         }
 
         @Override
