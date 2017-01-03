@@ -10,8 +10,7 @@ import android.widget.TextView;
 
 public class DestinationFragment extends Fragment{
     private Destination mDestination;
-    private TextView mNameField;
-    private TextView mDescriptionField;
+    private TextView mNameTextView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -22,8 +21,7 @@ public class DestinationFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_destination, container, false);
-        mNameField = (TextView) v.findViewById(R.id.destination_name);
-        mDescriptionField = (TextView) v.findViewById(R.id.destination_description);
+        mNameTextView = (TextView) v.findViewById(R.id.destination_name);
         return v;
     }
 }

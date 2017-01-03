@@ -11,10 +11,4 @@
         android:hint="@string/destination_name_hint"
         />
 
-    <TextView
-        android:id="@+id/destination_description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/destination_description_hint"
-        />
 </LinearLayout>
