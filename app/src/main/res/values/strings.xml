@@ -3,4 +3,10 @@
     <string name="action_settings">Settings</string>
     <string name="destination_name_hint">Destination name</string>
     <string name="destination_description_hint">Description of the destination</string>
+
+    <string-array name="drawer_items">
+        <item>Payment</item>
+        <item>Purchases</item>
+        <item>Settings</item>
+    </string-array>
 </resources>
