@@ -1,6 +1,7 @@
 package tff.agventure;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +29,7 @@ public class Destinations {
             "There are dogs...Obviously"
     };
 
+
     public static Destinations get(Context context){
         if(sDestinations == null)
             sDestinations = new Destinations(context);
@@ -41,6 +43,8 @@ public class Destinations {
             Destination destination = new Destination();
             destination.setName(mNames[i]);
             destination.setDescription(mDescriptions[i]);
+            int imageId = context.getResources().getIdentifier("horse", "drawable", context.getPackageName() );
+            destination.setImageId(imageId);
             mDestinations.add(destination);
         }
     }

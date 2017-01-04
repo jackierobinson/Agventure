@@ -1,12 +1,15 @@
 package tff.agventure;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -40,6 +43,7 @@ public class DestinationListFragment extends Fragment {
         private Destination mDestination;
         public TextView mNameTextView;
         public TextView mDescriptionTextView;
+        public ImageView mImageView;
 
         public DestinationHolder(View itemView){
             super(itemView);
@@ -47,12 +51,15 @@ public class DestinationListFragment extends Fragment {
                     .findViewById(R.id.list_item_destination_name);
             mDescriptionTextView = (TextView) itemView
                     .findViewById(R.id.list_item_destination_description);
+            mImageView = (ImageView) itemView
+                    .findViewById(R.id.list_item_destination_image);
         }
 
         public void bindDestination(Destination destination){
             mDestination = destination;
             mNameTextView.setText(mDestination.getName());
             mDescriptionTextView.setText(mDestination.getDescription());
+            mImageView.setImageResource(mDestination.getImageId());
         }
     }
 

@@ -9,6 +9,7 @@ public class Destination {
     private UUID mID;
     private String mName;
     private String mDescription;
+    private int mImageId;
 
     public Destination()
     {
@@ -33,5 +34,13 @@ public class Destination {
 
     public void setDescription(String description) {
         mDescription = description;
+    }
+
+    public int getImageId() {
+        return mImageId;
+    }
+
+    public void setImageId(int imageId) {
+        mImageId = imageId;
     }
 }
