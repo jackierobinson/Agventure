@@ -7,6 +7,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 public class DestinationListActivity extends SingleFragmentActivity{
@@ -14,6 +15,7 @@ public class DestinationListActivity extends SingleFragmentActivity{
     private ListView mDrawerList;
     private ArrayAdapter<String> mAdapter;
     private DrawerLayout mDrawerLayout;
+    private LinearLayout mDrawerLinearLayout;
     private ActionBarDrawerToggle mDrawerToggle;
     private String mActivityTitle;
     String[] mItems;
@@ -24,6 +26,7 @@ public class DestinationListActivity extends SingleFragmentActivity{
         setContentView(R.layout.activity_fragment);
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mDrawerLinearLayout = (LinearLayout) findViewById(R.id.drawer_linear_layout);
 
         mActivityTitle = getTitle().toString();
         mItems = getResources().getStringArray(R.array.drawer_items);
