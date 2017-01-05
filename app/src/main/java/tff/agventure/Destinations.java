@@ -29,6 +29,14 @@ public class Destinations {
             "There are dogs...Obviously"
     };
 
+    private String[] mImages = new String[]{
+            "horse",
+            "nursery2",
+            "nursery2",
+            "nursery2",
+            "strawberry",
+            "nursery2"
+    };
 
     public static Destinations get(Context context){
         if(sDestinations == null)
@@ -43,7 +51,7 @@ public class Destinations {
             Destination destination = new Destination();
             destination.setName(mNames[i]);
             destination.setDescription(mDescriptions[i]);
-            int imageId = context.getResources().getIdentifier("horse", "drawable", context.getPackageName() );
+            int imageId = context.getResources().getIdentifier(mImages[i], "drawable", context.getPackageName() );
             destination.setImageId(imageId);
             mDestinations.add(destination);
         }
