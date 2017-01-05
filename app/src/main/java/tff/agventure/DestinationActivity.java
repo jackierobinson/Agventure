@@ -4,7 +4,7 @@ import android.support.v4.app.Fragment;
 
 
 
-public class AgventureActivity extends SingleFragmentActivity {
+public class DestinationActivity extends DestinationListActivity {
 
     @Override
     protected Fragment createFragment(){
