@@ -1,14 +1,14 @@
 package tff.agventure;
 
-import android.graphics.drawable.Drawable;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -44,6 +44,7 @@ public class DestinationListFragment extends Fragment {
         public TextView mNameTextView;
         public TextView mDescriptionTextView;
         public ImageView mImageView;
+        public Button mExploreButton;
 
         public DestinationHolder(View itemView){
             super(itemView);
@@ -53,6 +54,8 @@ public class DestinationListFragment extends Fragment {
                     .findViewById(R.id.list_item_destination_description);
             mImageView = (ImageView) itemView
                     .findViewById(R.id.list_item_destination_image);
+            mExploreButton = (Button) itemView
+                    .findViewById(R.id.list_item_explore);
         }
 
         public void bindDestination(Destination destination){
@@ -60,6 +63,13 @@ public class DestinationListFragment extends Fragment {
             mNameTextView.setText(mDestination.getName());
             mDescriptionTextView.setText(mDestination.getDescription());
             mImageView.setImageResource(mDestination.getImageId());
+            mExploreButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(getActivity(), DestinationActivity.class);
+                    startActivity(i);
+                }
+            });
         }
     }
 
