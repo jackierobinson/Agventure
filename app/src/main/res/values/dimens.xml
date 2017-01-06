@@ -11,4 +11,8 @@
     <dimen name="primary_text">24sp</dimen>
     <dimen name="supporting_text">14sp</dimen>
     <dimen name="action_padding">8dp</dimen>
+    <dimen name="tab_max_width">264dp</dimen>
+    <dimen name="tab_padding_bottom">16dp</dimen>
+    <dimen name="tab_label">14sp</dimen>
+    <dimen name="custom_tab_layout_height">72dp</dimen>
 </resources>
