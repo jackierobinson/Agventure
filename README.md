@@ -9,4 +9,4 @@ Team Agventure consists of students at Louisiana State University, representing 
 ###My Progress
 Here are some screenshots of the applications. This is not the finished product, but I wanted to share some of my progress. Since I do not have any copyright permissions, I am using fictional destination and pictures free for reuse.
 
-![Image of Home](https://drive.google.com/open?id=0B5MDfOumBTlCalRKUGw1NmFEc1U)
+![Image of Home](https://drive.google.com/uc?id=0B5MDfOumBTlCalRKUGw1NmFEc1U)
