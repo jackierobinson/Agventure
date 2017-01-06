@@ -10,6 +10,8 @@ public class Destination {
     private String mName;
     private String mDescription;
     private int mImageId;
+    private String[] mFaqsQuestions; //possible look into making this a hashmap
+    private String[] mFaqsAnswers;
 
     public Destination()
     {
@@ -42,5 +44,21 @@ public class Destination {
 
     public void setImageId(int imageId) {
         mImageId = imageId;
+    }
+
+    public String[] getFaqsQuestions() {
+        return mFaqsQuestions;
+    }
+
+    public void setFaqsQuestions(String[] faqsQuestions) {
+        mFaqsQuestions = faqsQuestions;
+    }
+
+    public String[] getFaqsAnswers() {
+        return mFaqsAnswers;
+    }
+
+    public void setFaqsAnswers(String[] faqsAnswers) {
+        mFaqsAnswers = faqsAnswers;
     }
 }

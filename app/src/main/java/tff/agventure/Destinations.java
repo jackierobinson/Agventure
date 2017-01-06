@@ -38,6 +38,18 @@ public class Destinations {
             "nursery2"
     };
 
+    private String[] mQuestions = new String[]{
+            "Is housing provided?",
+            "Do you offer disability accommodations?",
+            "What food options are available?"
+    };
+
+    private String[] mAnswers = new String[]{
+            "No, but there is a nearby hotel.",
+            "Yes, we can accommodate wheelchairs and service dogs.",
+            "We have vegan, gluten free, and meat options"
+    };
+
     public static Destinations get(Context context){
         if(sDestinations == null)
             sDestinations = new Destinations(context);
@@ -53,6 +65,8 @@ public class Destinations {
             destination.setDescription(mDescriptions[i]);
             int imageId = context.getResources().getIdentifier(mImages[i], "drawable", context.getPackageName() );
             destination.setImageId(imageId);
+            destination.setFaqsQuestions(mQuestions);
+            destination.setFaqsAnswers(mAnswers);
             mDestinations.add(destination);
         }
     }
