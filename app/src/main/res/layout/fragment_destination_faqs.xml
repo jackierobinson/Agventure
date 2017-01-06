@@ -7,6 +7,9 @@
     <ExpandableListView
         android:id="@+id/faqs"
         android:layout_height="match_parent"
-        android:layout_width="match_parent"/>
+        android:layout_width="match_parent"
+        android:childDivider="@color/divider"
+        android:indicatorStart="@dimen/expandable_list_indicator"
+        />
 
 </LinearLayout>

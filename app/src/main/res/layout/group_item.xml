@@ -7,6 +7,14 @@
     <TextView
         android:id="@+id/group_item"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/expandable_list_padding_left_right"
+        android:paddingTop="@dimen/expandable_list_padding_top_bottom"
+        android:paddingBottom="@dimen/expandable_list_padding_top_bottom"
+        android:textStyle="bold"
+        />
+
+
+
 
 </LinearLayout>
