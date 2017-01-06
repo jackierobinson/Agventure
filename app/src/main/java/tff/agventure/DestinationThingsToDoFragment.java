@@ -1,7 +1,21 @@
 package tff.agventure;
 
-/**
- * Created by Jackie on 1/5/2017.
- */
-public class DestinationThingsToDoFragment {
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+public class DestinationThingsToDoFragment extends Fragment {
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_destination_things_to_do, container, false);
+    }
 }
