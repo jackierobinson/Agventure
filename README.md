@@ -5,3 +5,8 @@ We believe that the average person possesses the tools to combat hunger worldwid
 
 ###Our Background
 Team Agventure consists of students at Louisiana State University, representing diverse disciplines. Sarah Bernard will complete her degrees in History and Agricultural Business, with her concentration in International Business; she has a passion for tourism, especially in the agriculture sector. Alexis Agard is an Agricultural Business major, with her concentration in International Business and her minor in Business Administration; she is pursuing a career in global marketing in emerging markets and economic development. Jackie Robinson is a Computer Science major with her concentration in Software Engineering and her minor in Information Technology Management; she is looking forward to entering into the field of software engineering. Franklin Bonilla is an M.S. Student in the LSU School of Nutrition and Food Sciences. Originally from Honduras, his research focuses food science and food preservation methods. Susan Karimiha is PhD Candidate in the LSU School of Human Resource Education and Workforce Development. Her research focuses on workforce development challenges with labor forces located in developing countries.
+
+###My Progress
+Here are some screenshots of the applications. This is not the finished product, but I wanted to share some of my progress. Since I do not have any copyright permissions, I am using fictional destination and pictures free for reuse.
+
+![Image of Home](https://drive.google.com/open?id=0B5MDfOumBTlCalRKUGw1NmFEc1U)
