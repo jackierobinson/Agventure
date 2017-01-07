@@ -1,5 +1,6 @@
 package tff.agventure;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -17,6 +18,7 @@ import java.util.List;
 public class DestinationListFragment extends Fragment {
     private RecyclerView mDestinationRecyclerView;
     private DestinationAdapter mAdapter;
+    private static  final String EXTRA_DESTINATION = "tff.agventure.destination_list.destination";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -67,10 +69,17 @@ public class DestinationListFragment extends Fragment {
                 @Override
                 public void onClick(View v) {
                     Intent i = new Intent(getActivity(), DestinationActivity.class);
+                    i.putExtra(EXTRA_DESTINATION, mDestination);
                     startActivity(i);
                 }
             });
         }
+    }
+
+    public static Intent newIntent(Context packageContext, Destination destination){
+        Intent i = new Intent(packageContext, DestinationActivity.class);
+        i.putExtra(EXTRA_DESTINATION, destination);
+        return i;
     }
 
     private class DestinationAdapter extends RecyclerView.Adapter<DestinationHolder>{

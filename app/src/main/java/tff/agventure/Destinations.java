@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 
@@ -65,9 +66,21 @@ public class Destinations {
             destination.setDescription(mDescriptions[i]);
             int imageId = context.getResources().getIdentifier(mImages[i], "drawable", context.getPackageName() );
             destination.setImageId(imageId);
-            destination.setFaqsQuestions(mQuestions);
-            destination.setFaqsAnswers(mAnswers);
+            addQuestions(destination);
+            addAnswers(destination);
             mDestinations.add(destination);
+        }
+    }
+
+    private void addQuestions (Destination destination){
+        for(int i = 0; i < mQuestions.length; i++){
+            destination.getFaqs().addQuestion(mQuestions[i]);
+        }
+    }
+
+    private void addAnswers (Destination destination){
+        for(int i = 0; i < mAnswers.length; i++){
+            destination.getFaqs().addAnswer(mQuestions[i], mAnswers[i]);
         }
     }
 

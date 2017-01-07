@@ -15,10 +15,11 @@ import java.util.HashMap;
 import java.util.List;
 
 public class DestinationFaqsFragment extends Fragment{
-    List<String> mGroupItems;
-    HashMap<String, List<String>> mChildItems;
-    ExpandableListView mFaqsExpandableListView;
-    ExpandableListAdapter mFaqsExpandableListAdapter;
+    private List<String> mGroupItems;
+    private HashMap<String, List<String>> mChildItems;
+    private ExpandableListView mFaqsExpandableListView;
+    private ExpandableListAdapter mFaqsExpandableListAdapter;
+    private Destination mDestination;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -30,18 +31,19 @@ public class DestinationFaqsFragment extends Fragment{
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_destination_faqs, container, false);
 
-        createGroups();
-        createChildren();
+        mDestination = (Destination) getActivity().getIntent().getSerializableExtra("tff.agventure.destination_list.destination");
+        /*createGroups();
+        createChildren();*/
 
         mFaqsExpandableListView = (ExpandableListView) view
                 .findViewById(R.id.faqs);
 
-        mFaqsExpandableListAdapter = new ExpandableListAdapter(getActivity(), mGroupItems, mChildItems);
+        mFaqsExpandableListAdapter = new ExpandableListAdapter(getActivity(), mDestination.getFaqs().getFaqsQuestions(), mDestination.getFaqs().getFaqsAnswers());
         mFaqsExpandableListView.setAdapter(mFaqsExpandableListAdapter);
         return view;
     }
 
-    private void createGroups (){
+    /*private void createGroups (){
         mGroupItems = new ArrayList<>();
         mGroupItems.add( "Is housing provided?");
         mGroupItems.add("Do you offer disability accommodations?");
@@ -60,7 +62,7 @@ public class DestinationFaqsFragment extends Fragment{
         mChildItems.put("Do you offer disability accommodations?", child2);
         mChildItems.put("What food options are available?", child3);
     }
-
+*/
     private class ExpandableListAdapter extends BaseExpandableListAdapter{
         private Context mContext;
         private List<String> mGroupItems;

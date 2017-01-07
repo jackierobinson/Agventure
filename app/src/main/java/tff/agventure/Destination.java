@@ -1,21 +1,24 @@
 package tff.agventure;
 
+import java.io.Serializable;
 import java.util.UUID;
 
 /*
 This class describes an agritourism destination
  */
-public class Destination {
+public class Destination implements Serializable{
     private UUID mID;
     private String mName;
     private String mDescription;
+    private String mAbout;
     private int mImageId;
-    private String[] mFaqsQuestions; //possible look into making this a hashmap
-    private String[] mFaqsAnswers;
+    private Faqs mFaqs;
+    private ContactInfo mContactInfo;
 
     public Destination()
     {
         mID = UUID.randomUUID();
+        mFaqs = new Faqs();
     }
 
     public UUID getID() {
@@ -46,19 +49,23 @@ public class Destination {
         mImageId = imageId;
     }
 
-    public String[] getFaqsQuestions() {
-        return mFaqsQuestions;
+    public String getAbout() {
+        return mAbout;
     }
 
-    public void setFaqsQuestions(String[] faqsQuestions) {
-        mFaqsQuestions = faqsQuestions;
+    public void setAbout(String about) {
+        mAbout = about;
     }
 
-    public String[] getFaqsAnswers() {
-        return mFaqsAnswers;
+    public Faqs getFaqs() {
+        return mFaqs;
     }
 
-    public void setFaqsAnswers(String[] faqsAnswers) {
-        mFaqsAnswers = faqsAnswers;
+    public ContactInfo getContactInfo() {
+        return mContactInfo;
+    }
+
+    public void setContactInfo(ContactInfo contactInfo) {
+        mContactInfo = contactInfo;
     }
 }
