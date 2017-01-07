@@ -1,15 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scroll"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:layout_margin="@dimen/fragment_margin"
+
+    >
 
     <TextView
+        android:id="@+id/about_destination_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="about fragment"
-        android:textSize="40dp"
-        android:textStyle="bold"
-        android:layout_centerInParent="true"/>
+        android:paddingTop="@dimen/body_text_padding"
+        android:paddingBottom="@dimen/body_text_padding"
+        android:paddingLeft="@dimen/body_text_padding"
+        android:paddingRight="@dimen/body_text_padding"
+        android:textSize="@dimen/body_text"
+        android:hint="name"/>
 
+    <TextView
+        android:id="@+id/about_destination_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/body_text_padding"
+        android:paddingLeft="@dimen/body_text_padding"
+        android:paddingRight="@dimen/body_text_padding"
+        android:textSize="@dimen/body_text"
+        android:hint="address"/>
 
-</RelativeLayout>
+    <TextView
+        android:id="@+id/about_destination_phone_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/body_text_padding"
+        android:paddingLeft="@dimen/body_text_padding"
+        android:paddingRight="@dimen/body_text_padding"
+        android:textSize="@dimen/body_text"
+        android:hint="phone number"/>
+
+    <TextView
+        android:id="@+id/about_destination_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/body_text_padding"
+        android:paddingLeft="@dimen/body_text_padding"
+        android:paddingRight="@dimen/body_text_padding"
+        android:textSize="@dimen/body_text"
+        android:hint="email"/>
+
+    <TextView
+        android:id="@+id/about_destination_hours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/body_text_padding"
+        android:paddingLeft="@dimen/body_text_padding"
+        android:paddingRight="@dimen/body_text_padding"
+        android:textSize="@dimen/body_text"
+        android:hint="hours"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider"/>
+
+    <TextView
+        android:id="@+id/about_destination"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/body_text_padding"
+        android:hint="about"/>
+
+</LinearLayout>
+    </ScrollView>

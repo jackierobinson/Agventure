@@ -15,10 +15,11 @@ import java.util.HashMap;
 import java.util.List;
 
 public class DestinationFaqsFragment extends Fragment{
-    List<String> mGroupItems;
-    HashMap<String, List<String>> mChildItems;
-    ExpandableListView mFaqsExpandableListView;
-    ExpandableListAdapter mFaqsExpandableListAdapter;
+    private List<String> mGroupItems;
+    private HashMap<String, List<String>> mChildItems;
+    private ExpandableListView mFaqsExpandableListView;
+    private ExpandableListAdapter mFaqsExpandableListAdapter;
+    private Destination mDestination;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -30,35 +31,14 @@ public class DestinationFaqsFragment extends Fragment{
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_destination_faqs, container, false);
 
-        createGroups();
-        createChildren();
+        mDestination = (Destination) getActivity().getIntent().getSerializableExtra("tff.agventure.destination_list.destination");
 
         mFaqsExpandableListView = (ExpandableListView) view
                 .findViewById(R.id.faqs);
 
-        mFaqsExpandableListAdapter = new ExpandableListAdapter(getActivity(), mGroupItems, mChildItems);
+        mFaqsExpandableListAdapter = new ExpandableListAdapter(getActivity(), mDestination.getFaqs().getFaqsQuestions(), mDestination.getFaqs().getFaqsAnswers());
         mFaqsExpandableListView.setAdapter(mFaqsExpandableListAdapter);
         return view;
-    }
-
-    private void createGroups (){
-        mGroupItems = new ArrayList<>();
-        mGroupItems.add( "Is housing provided?");
-        mGroupItems.add("Do you offer disability accommodations?");
-        mGroupItems.add("What food options are available?");
-    }
-
-    private void createChildren(){
-        mChildItems = new HashMap<>();
-        List<String> child1 = new ArrayList<>();
-        List<String> child2 = new ArrayList<>();
-        List<String> child3 = new ArrayList<>();
-        child1.add("No, but there is a nearby hotel.");
-        child2.add("Yes, we can accommodate wheelchairs and service dogs.");
-        child3.add("We have vegan, gluten free, and meat options");
-        mChildItems.put("Is housing provided?", child1);
-        mChildItems.put("Do you offer disability accommodations?", child2);
-        mChildItems.put("What food options are available?", child3);
     }
 
     private class ExpandableListAdapter extends BaseExpandableListAdapter{

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 
@@ -50,6 +51,10 @@ public class Destinations {
             "We have vegan, gluten free, and meat options"
     };
 
+    private String mAbout = "Oasis Range is a family owned farm founded in 1902. It is dedicated to producing high quality cocoa products. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce cursus et odio non interdum. Aenean sit amet diam enim. Vivamus pretium purus sapien, sit amet tristique orci ullamcorper at. Nunc fringilla fringilla malesuada. Cras vitae nisl orci. Donec ac ullamcorper neque. Praesent molestie ornare purus, quis ultricies dolor hendrerit vel. Nulla gravida, lectus id tincidunt tincidunt, tortor quam sagittis lacus, ac malesuada lacus sapien eget erat. In accumsan ligula porttitor velit volutpat, eu vehicula justo lobortis. Nunc eu tristique lorem, id cursus elit. Morbi condimentum, est at faucibus pellentesque, magna justo pellentesque risus, eget dictum risus dui eget tellus. Nam maximus quam dui, eget semper leo tempor at. Donec pretium sollicitudin ex.\n" +
+            "\n" +
+            "Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum iaculis ex vitae nibh faucibus pulvinar. Morbi volutpat purus eget lectus tincidunt vestibulum. Nullam aliquam vel tortor eget consectetur. Fusce mattis neque id sapien imperdiet, ac euismod leo sodales. Nam et varius arcu. Aenean pulvinar justo quis magna accumsan, interdum sollicitudin augue sollicitudin. Phasellus laoreet sollicitudin odio at iaculis. Nunc molestie sem a ante porta gravida. Aenean a diam id dolor vehicula hendrerit id sit amet nisi. Duis ultrices aliquam tempus. Quisque molestie erat et sodales consectetur. Mauris non nunc quis leo volutpat placerat.";
+
     public static Destinations get(Context context){
         if(sDestinations == null)
             sDestinations = new Destinations(context);
@@ -65,9 +70,23 @@ public class Destinations {
             destination.setDescription(mDescriptions[i]);
             int imageId = context.getResources().getIdentifier(mImages[i], "drawable", context.getPackageName() );
             destination.setImageId(imageId);
-            destination.setFaqsQuestions(mQuestions);
-            destination.setFaqsAnswers(mAnswers);
+            addQuestions(destination);
+            addAnswers(destination);
+            destination.setAbout(mAbout);
+            destination.setContactInfo(new ContactInfo("8 AM - 5 PM", "3338 Winifred Way, South Hadley, Massachusetts, 01075", "765-664-0680", "oasisrange@gmail.com"));
             mDestinations.add(destination);
+        }
+    }
+
+    private void addQuestions (Destination destination){
+        for(int i = 0; i < mQuestions.length; i++){
+            destination.getFaqs().addQuestion(mQuestions[i]);
+        }
+    }
+
+    private void addAnswers (Destination destination){
+        for(int i = 0; i < mAnswers.length; i++){
+            destination.getFaqs().addAnswer(mQuestions[i], mAnswers[i]);
         }
     }
 
