@@ -32,8 +32,6 @@ public class DestinationFaqsFragment extends Fragment{
         View view = inflater.inflate(R.layout.fragment_destination_faqs, container, false);
 
         mDestination = (Destination) getActivity().getIntent().getSerializableExtra("tff.agventure.destination_list.destination");
-        /*createGroups();
-        createChildren();*/
 
         mFaqsExpandableListView = (ExpandableListView) view
                 .findViewById(R.id.faqs);
@@ -43,26 +41,6 @@ public class DestinationFaqsFragment extends Fragment{
         return view;
     }
 
-    /*private void createGroups (){
-        mGroupItems = new ArrayList<>();
-        mGroupItems.add( "Is housing provided?");
-        mGroupItems.add("Do you offer disability accommodations?");
-        mGroupItems.add("What food options are available?");
-    }
-
-    private void createChildren(){
-        mChildItems = new HashMap<>();
-        List<String> child1 = new ArrayList<>();
-        List<String> child2 = new ArrayList<>();
-        List<String> child3 = new ArrayList<>();
-        child1.add("No, but there is a nearby hotel.");
-        child2.add("Yes, we can accommodate wheelchairs and service dogs.");
-        child3.add("We have vegan, gluten free, and meat options");
-        mChildItems.put("Is housing provided?", child1);
-        mChildItems.put("Do you offer disability accommodations?", child2);
-        mChildItems.put("What food options are available?", child3);
-    }
-*/
     private class ExpandableListAdapter extends BaseExpandableListAdapter{
         private Context mContext;
         private List<String> mGroupItems;

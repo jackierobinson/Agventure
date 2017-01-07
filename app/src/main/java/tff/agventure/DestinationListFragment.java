@@ -18,7 +18,7 @@ import java.util.List;
 public class DestinationListFragment extends Fragment {
     private RecyclerView mDestinationRecyclerView;
     private DestinationAdapter mAdapter;
-    private static  final String EXTRA_DESTINATION = "tff.agventure.destination_list.destination";
+    private static  final String EXTRA_DESTINATION = "tff.agventure.destination_list.destination";//static variable is not useful if it's private
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -76,11 +76,11 @@ public class DestinationListFragment extends Fragment {
         }
     }
 
-    public static Intent newIntent(Context packageContext, Destination destination){
+   /* public static Intent newIntent(Context packageContext, Destination destination){
         Intent i = new Intent(packageContext, DestinationActivity.class);
         i.putExtra(EXTRA_DESTINATION, destination);
         return i;
-    }
+    }*/
 
     private class DestinationAdapter extends RecyclerView.Adapter<DestinationHolder>{
         private List<Destination> mDestinations;

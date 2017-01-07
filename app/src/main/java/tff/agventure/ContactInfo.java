@@ -1,10 +1,19 @@
 package tff.agventure;
 
-public class ContactInfo {
+import java.io.Serializable;
+
+public class ContactInfo implements Serializable {
     private String mAddress;
     private String mPhoneNumber;
     private String mEmail;
     private String mHours;
+
+    public ContactInfo(String hours, String address, String phoneNumber, String email) {
+        mHours = hours;
+        mAddress = address;
+        mPhoneNumber = phoneNumber;
+        mEmail = email;
+    }
 
     public String getAddress() {
         return mAddress;
