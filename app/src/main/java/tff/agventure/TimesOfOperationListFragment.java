@@ -1,76 +1,47 @@
+/*
 package tff.agventure;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.sql.Time;
+import java.util.HashMap;
 import java.util.List;
 
-public class DestinationAboutFragment extends Fragment{
-    private TextView mNameTextView;
-    private TextView mAddressTextView;
-    private TextView mPhoneTextView;
-    private TextView mEmailTextView;
-    private TextView mAboutTextView;
-    private Destination mDestination;
+*/
+/**
+ * Created by Jackie on 1/6/2017.
+ *//*
+
+public class TimesOfOperationListFragment extends Fragment{
     private RecyclerView mTimesOfOperationsRecyclerView;
     private TimesOfOperationAdapter mAdapter;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_destination_about, container, false);
 
-        mNameTextView = (TextView) view
-                .findViewById(R.id.about_destination_name);
-
-        mAddressTextView = (TextView) view
-                .findViewById(R.id.about_destination_address);
-
-        mEmailTextView = (TextView) view
-                .findViewById(R.id.about_destination_email);
-
-        mPhoneTextView = (TextView) view
-                .findViewById(R.id.about_destination_phone_number);
-
-        mAboutTextView = (TextView) view
-                .findViewById(R.id.about_destination);
-
         mTimesOfOperationsRecyclerView = (RecyclerView) view
-                .findViewById(R.id.time_of_operation_recycler_view);
+                .findViewById(R.id.destination_recycler_view);
         mTimesOfOperationsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        mDestination = (Destination) getActivity().getIntent().getSerializableExtra("tff.agventure.destination_list.destination");
-
-        setTextViews();
-        setUpRecyclerView();
+        updateUI();
 
         return view;
     }
 
+    private void updateUI(){
+        Destinations destinations = Destinations.get(getActivity());
+        List<Destination> destinationsList = destinations.getDestinations();
 
-
-    private void setTextViews(){
-        mNameTextView.setText(mDestination.getName());
-        mAddressTextView.setText(mDestination.getContactInfo().getAddress());
-        mEmailTextView.setText(mDestination.getContactInfo().getEmail());
-        mPhoneTextView.setText(mDestination.getContactInfo().getPhoneNumber());
-        mAboutTextView.setText(mDestination.getAbout());
-    }
-
-    private void setUpRecyclerView(){
-        mAdapter = new TimesOfOperationAdapter(mDestination.getContactInfo().getTimesofOperation());
+        mAdapter = new TimesOfOperationAdapter();
         mTimesOfOperationsRecyclerView.setAdapter(mAdapter);
     }
 
@@ -108,7 +79,7 @@ public class DestinationAboutFragment extends Fragment{
         public TimesOfOperationHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
             View view = layoutInflater
-                    .inflate(R.layout.list_item_time_of_operation, parent, false);
+                    .inflate(R.layout.list_item_destination, parent, false);
             return new TimesOfOperationHolder(view);
         }
 
@@ -121,8 +92,8 @@ public class DestinationAboutFragment extends Fragment{
 
         @Override
         public int getItemCount() {
-            return mTimesOfOperation.size();
+            return 0;
         }
     }
-
 }
+*/

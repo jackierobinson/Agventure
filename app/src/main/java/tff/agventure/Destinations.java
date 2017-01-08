@@ -3,6 +3,7 @@ package tff.agventure;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -55,6 +56,8 @@ public class Destinations {
             "\n" +
             "Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum iaculis ex vitae nibh faucibus pulvinar. Morbi volutpat purus eget lectus tincidunt vestibulum. Nullam aliquam vel tortor eget consectetur. Fusce mattis neque id sapien imperdiet, ac euismod leo sodales. Nam et varius arcu. Aenean pulvinar justo quis magna accumsan, interdum sollicitudin augue sollicitudin. Phasellus laoreet sollicitudin odio at iaculis. Nunc molestie sem a ante porta gravida. Aenean a diam id dolor vehicula hendrerit id sit amet nisi. Duis ultrices aliquam tempus. Quisque molestie erat et sodales consectetur. Mauris non nunc quis leo volutpat placerat.";
 
+    private List<TimeOfOperation> mTimesOfOperation;
+
     public static Destinations get(Context context){
         if(sDestinations == null)
             sDestinations = new Destinations(context);
@@ -73,9 +76,21 @@ public class Destinations {
             addQuestions(destination);
             addAnswers(destination);
             destination.setAbout(mAbout);
-            destination.setContactInfo(new ContactInfo("8 AM - 5 PM", "3338 Winifred Way, South Hadley, Massachusetts, 01075", "765-664-0680", "oasisrange@gmail.com"));
+            setTimesOfOperation();
+            destination.setContactInfo(new ContactInfo(mTimesOfOperation, "3338 Winifred Way, South Hadley, Massachusetts, 01075", "765-664-0680", "oasisrange@gmail.com"));
             mDestinations.add(destination);
         }
+    }
+
+    private void setTimesOfOperation (){
+        mTimesOfOperation = new ArrayList<>();
+        mTimesOfOperation.add(new TimeOfOperation("Sunday", "Closed"));
+        mTimesOfOperation.add(new TimeOfOperation("Monday", "8 AM - 5 PM"));
+        mTimesOfOperation.add(new TimeOfOperation("Tuesday", "8 AM - 5 PM"));
+        mTimesOfOperation.add(new TimeOfOperation("Wednesday", "8 AM - 5 PM"));
+        mTimesOfOperation.add(new TimeOfOperation("Thursday", "8 AM - 5 PM"));
+        mTimesOfOperation.add(new TimeOfOperation("Friday", "8 AM - 7 PM"));
+        mTimesOfOperation.add(new TimeOfOperation("Saturday", "8 AM - 7 PM"));
     }
 
     private void addQuestions (Destination destination){

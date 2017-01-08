@@ -1,79 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/scroll"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical"
-              android:layout_margin="@dimen/fragment_margin"
 
-    >
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:layout_margin="@dimen/fragment_margin"
+                  android:orientation="vertical"
+                  android:padding="16dp"
 
-    <TextView
-        android:id="@+id/about_destination_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="@dimen/body_text_padding"
-        android:paddingBottom="@dimen/body_text_padding"
-        android:paddingLeft="@dimen/body_text_padding"
-        android:paddingRight="@dimen/body_text_padding"
-        android:textSize="@dimen/body_text"
-        android:hint="name"/>
+        >
 
-    <TextView
-        android:id="@+id/about_destination_address"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingBottom="@dimen/body_text_padding"
-        android:paddingLeft="@dimen/body_text_padding"
-        android:paddingRight="@dimen/body_text_padding"
-        android:textSize="@dimen/body_text"
-        android:hint="address"/>
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:paddingBottom="16dp">
 
-    <TextView
-        android:id="@+id/about_destination_phone_number"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingBottom="@dimen/body_text_padding"
-        android:paddingLeft="@dimen/body_text_padding"
-        android:paddingRight="@dimen/body_text_padding"
-        android:textSize="@dimen/body_text"
-        android:hint="phone number"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/about_destination_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingBottom="@dimen/body_text_padding"
-        android:paddingLeft="@dimen/body_text_padding"
-        android:paddingRight="@dimen/body_text_padding"
-        android:textSize="@dimen/body_text"
-        android:hint="email"/>
+                <TextView
+                    android:id="@+id/about_destination_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="name"
+                    android:paddingBottom="@dimen/body_text_padding"
+                    android:paddingLeft="@dimen/body_text_padding"
+                    android:paddingRight="@dimen/body_text_padding"
+                    android:paddingTop="@dimen/body_text_padding"
+                    android:textSize="@dimen/body_text"/>
 
-    <TextView
-        android:id="@+id/about_destination_hours"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingBottom="@dimen/body_text_padding"
-        android:paddingLeft="@dimen/body_text_padding"
-        android:paddingRight="@dimen/body_text_padding"
-        android:textSize="@dimen/body_text"
-        android:hint="hours"/>
+                <TextView
+                    android:id="@+id/about_destination_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="address"
+                    android:paddingBottom="@dimen/body_text_padding"
+                    android:paddingLeft="@dimen/body_text_padding"
+                    android:paddingRight="@dimen/body_text_padding"
+                    android:textSize="@dimen/body_text"/>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/divider"/>
+                <TextView
+                    android:id="@+id/about_destination_phone_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="phone number"
+                    android:paddingBottom="@dimen/body_text_padding"
+                    android:paddingLeft="@dimen/body_text_padding"
+                    android:paddingRight="@dimen/body_text_padding"
+                    android:textSize="@dimen/body_text"/>
 
-    <TextView
-        android:id="@+id/about_destination"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/body_text_padding"
-        android:hint="about"/>
+                <TextView
+                    android:id="@+id/about_destination_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="email"
+                    android:paddingBottom="@dimen/body_text_padding"
+                    android:paddingLeft="@dimen/body_text_padding"
+                    android:paddingRight="@dimen/body_text_padding"
+                    android:textSize="@dimen/body_text"/>
 
-</LinearLayout>
-    </ScrollView>
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:paddingBottom="16dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/primary_text_padding"
+                    android:text="Times of Operation"
+                    android:textSize="@dimen/primary_text"/>
+
+                <android.support.v7.widget.RecyclerView
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/time_of_operation_recycler_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="300dp"
+                    >
+
+                </android.support.v7.widget.RecyclerView>
+            </LinearLayout>
+
+
+        </android.support.v7.widget.CardView>
+
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/card_margin"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/primary_text_padding"
+                    android:text="@string/about"
+                    android:textSize="@dimen/primary_text"/>
+
+                <TextView
+                    android:id="@+id/about_destination"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="about"
+                    android:paddingBottom="24dp"
+                    android:paddingLeft="@dimen/supporting_text_padding"
+                    android:paddingRight="@dimen/supporting_text_padding"/>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>

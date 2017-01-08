@@ -1,15 +1,17 @@
 package tff.agventure;
 
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.List;
 
 public class ContactInfo implements Serializable {
     private String mAddress;
     private String mPhoneNumber;
     private String mEmail;
-    private String mHours;
+    private List<TimeOfOperation> mTimesofOperation;
 
-    public ContactInfo(String hours, String address, String phoneNumber, String email) {
-        mHours = hours;
+    public ContactInfo(List<TimeOfOperation> timesofOperation, String address, String phoneNumber, String email) {
+        mTimesofOperation = timesofOperation;
         mAddress = address;
         mPhoneNumber = phoneNumber;
         mEmail = email;
@@ -39,12 +41,12 @@ public class ContactInfo implements Serializable {
         mEmail = email;
     }
 
-    public String getHours() {
-        return mHours;
+    public List<TimeOfOperation> getTimesofOperation() {
+        return mTimesofOperation;
     }
 
-    public void setHours(String hours) {
-        mHours = hours;
+    public void setTimesofOperation(List<TimeOfOperation> timesofOperation) {
+        mTimesofOperation = timesofOperation;
     }
 }
 
