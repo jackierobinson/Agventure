@@ -40,16 +40,21 @@ public class DestinationThingsToDoFragment extends Fragment {
 
     private class ThingsToDoHolder extends RecyclerView.ViewHolder{
         private TextView mNameTextView;
+        private TextView mDescriptionTextView;
 
         public ThingsToDoHolder(View itemView) {
             super(itemView);
 
             mNameTextView = (TextView) itemView
                     .findViewById(R.id.list_item_thing_to_do_name);
+
+            mDescriptionTextView = (TextView) itemView
+                    .findViewById(R.id.list_item_thing_to_do_description);
         }
 
         private void bindThingToDo(ThingToDo thingToDo){
             mNameTextView.setText(thingToDo.getName());
+            mDescriptionTextView.setText(thingToDo.getDescription());
         }
     }
 
