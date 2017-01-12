@@ -3,6 +3,7 @@ package tff.agventure;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 
+import java.math.BigDecimal;
 import java.sql.Time;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -58,6 +59,8 @@ public class Destinations {
 
     private List<TimeOfOperation> mTimesOfOperation;
 
+    private List<ThingToDo> mThingsToDo;
+
     public static Destinations get(Context context){
         if(sDestinations == null)
             sDestinations = new Destinations(context);
@@ -78,6 +81,8 @@ public class Destinations {
             destination.setAbout(mAbout);
             setTimesOfOperation();
             destination.setContactInfo(new ContactInfo(mTimesOfOperation, "3338 Winifred Way, South Hadley, Massachusetts, 01075", "765-664-0680", "oasisrange@gmail.com"));
+            createThingsToDo();
+            destination.setThingsToDo(mThingsToDo);
             mDestinations.add(destination);
         }
     }
@@ -103,6 +108,21 @@ public class Destinations {
         for(int i = 0; i < mAnswers.length; i++){
             destination.getFaqs().addAnswer(mQuestions[i], mAnswers[i]);
         }
+    }
+
+    private void createThingsToDo(){
+        mThingsToDo = new ArrayList<>();
+        List<Price> prices = new ArrayList<>();
+        prices.add(new Price("Seniors 55+", new BigDecimal(35.00)));
+        prices.add(new Price("Children 0-12", new BigDecimal(35.00)));
+        prices.add(new Price("Adults 13-54", new BigDecimal(45.00)));
+        mThingsToDo.add(new ThingToDo("Horse Ride", "Guests will be able enjoy a horse ride around the farm. Smaller children can ride ponies. Staff onsite will teach guests how to ride the horses.", prices));
+        prices = new ArrayList<>();
+        prices.add(new Price("Seniors 55+", new BigDecimal(40.00)));
+        prices.add(new Price("Children 0-12", new BigDecimal(40.00)));
+        prices.add(new Price("Adults 13-54", new BigDecimal(50.00)));
+        mThingsToDo.add(new ThingToDo("Plantation Tour", "Guests will be able to visit the plantation and learn about the foods produced.. Lunch will be provided.", prices));
+
     }
 
     public List<Destination> getDestinations(){

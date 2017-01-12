@@ -1,6 +1,7 @@
 package tff.agventure;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.UUID;
 
 /*
@@ -14,6 +15,7 @@ public class Destination implements Serializable{
     private int mImageId;
     private Faqs mFaqs;
     private ContactInfo mContactInfo;
+    private List<ThingToDo> mThingsToDo;
 
     public Destination()
     {
@@ -67,5 +69,13 @@ public class Destination implements Serializable{
 
     public void setContactInfo(ContactInfo contactInfo) {
         mContactInfo = contactInfo;
+    }
+
+    public List<ThingToDo> getThingsToDo() {
+        return mThingsToDo;
+    }
+
+    public void setThingsToDo(List<ThingToDo> thingsToDo) {
+        mThingsToDo = thingsToDo;
     }
 }
