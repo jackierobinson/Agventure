@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Agventure</string>
+    <string name="app_name">AgAdventure</string>
 
     <!-- destination cards -->
     <string name="action_settings">Settings</string>

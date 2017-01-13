@@ -16,29 +16,23 @@ import java.util.UUID;
 public class Destinations {
     private static Destinations sDestinations;
     private List<Destination> mDestinations;
-    private String[] mNames = new String[]{"Oasis Range",
-            "Eastwood Nursery",
-            "Rainbow Ridge Orchard",
-            "Southwind Nursery",
-            "Berry Crest Farm",
-            "Small Paws Meadow"
+    private String[] mNames = new String[]{"Finca de Hermana",
+            "Perfect Petals Farm",
+            "S&K Farms",
+            "Finca de la Estrella"
     };
     private String[] mDescriptions = new String[]{
-            "Oasis Range is an old farm that specializes in coffee. Oasis range provides guests lodging and meals as well as horseback rides",
-            "Here is a random description",
-            "Wow another random description",
-            "Writing more descriptions so I can have a decent list",
-            "This is Strawberry Shortcake's farm",
-            "There are dogs...Obviously"
+            "Finca de Hermana is a 3 acre farm near the heart of Ecuador, offering guests a unique look at cacao production, alongside beautiful flowers being farmed year-round. This family owned and operated farm has been handed down through five generations of the Alvarado family, who take pride in what they produce. From this small crevice of the Ecuadorian countryside, come chocolate and flowers that make their way to consumers all over the world",
+            "Perfect Petals Farm is a rose farm in the heart of Kenya’s flower producing region, growing beautiful buds year round. Visiting Perfect Petals Farm, you can easily see the care that goes into producing some of the most long-lasting flowers in the world, which owner Mosi Tinibu supplies to buyers worldwide. The vibrant colors at this 2-acre facility are a breathtaking sight for visitors to this unique area.",
+            "S&K Farms is a farm producing rubber for a variety of products used every day by people around the world. Visit  to understand exactly how this versatile material makes its journey to your home. This family owned and operated farm, covering just 3 acres, is a memorable must-see, just ask Hathai Chaiprasit, farm owner and mother of 4.",
+            "Finca de la Estrella, or Star Farm in English, is a 4-acre farm in beautiful Comayagua, Honduras, growing coffee and bananas. The coffee grown at Finca de la Estrella finds its way into the cups of coffee-drinkers all over the world. The Moncada family, who have farmed this land for generations, welcome you to their farm to experience the land, people, and processes that produce some of your favorite fruits and beverages."
     };
 
     private String[] mImages = new String[]{
-            "horse",
-            "nursery2",
-            "nursery2",
-            "nursery2",
-            "strawberry",
-            "nursery2"
+            "finca_de_hermana",
+            "perfect_petals_farm",
+            "sk_farms",
+            "finca_de_la_estrella",
     };
 
     private String[] mQuestions = new String[]{
@@ -53,9 +47,11 @@ public class Destinations {
             "We have vegan, gluten free, and meat options"
     };
 
-    private String mAbout = "Oasis Range is a family owned farm founded in 1902. It is dedicated to producing high quality cocoa products. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce cursus et odio non interdum. Aenean sit amet diam enim. Vivamus pretium purus sapien, sit amet tristique orci ullamcorper at. Nunc fringilla fringilla malesuada. Cras vitae nisl orci. Donec ac ullamcorper neque. Praesent molestie ornare purus, quis ultricies dolor hendrerit vel. Nulla gravida, lectus id tincidunt tincidunt, tortor quam sagittis lacus, ac malesuada lacus sapien eget erat. In accumsan ligula porttitor velit volutpat, eu vehicula justo lobortis. Nunc eu tristique lorem, id cursus elit. Morbi condimentum, est at faucibus pellentesque, magna justo pellentesque risus, eget dictum risus dui eget tellus. Nam maximus quam dui, eget semper leo tempor at. Donec pretium sollicitudin ex.\n" +
+    private String mAbout = "Visit this memorable destination, away from the bustle of resort and city life, and you’ll leave with great memories along with a dose of knowledge about the cacao and cut flower industries. Get up close and personal with cacao plants and follow the coffee “pods” as they make their way through harvesting, cleaning, processing, and packaging. After running your hands through the freshly roasted cacao beans and smelling their sweet, strong aroma, you’ll simply have to buy some of the world’s freshest and finest chocolate from the friendly staff and try a taste of their final product at a chocolate tasting.\n" +
             "\n" +
-            "Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum iaculis ex vitae nibh faucibus pulvinar. Morbi volutpat purus eget lectus tincidunt vestibulum. Nullam aliquam vel tortor eget consectetur. Fusce mattis neque id sapien imperdiet, ac euismod leo sodales. Nam et varius arcu. Aenean pulvinar justo quis magna accumsan, interdum sollicitudin augue sollicitudin. Phasellus laoreet sollicitudin odio at iaculis. Nunc molestie sem a ante porta gravida. Aenean a diam id dolor vehicula hendrerit id sit amet nisi. Duis ultrices aliquam tempus. Quisque molestie erat et sodales consectetur. Mauris non nunc quis leo volutpat placerat.";
+            "\tWhen you’ve had your fill of chocolate, step over to Finca de Hermana’s cut flower operation where you’ll see and smell thousands of flowers in a myriad of bright colors. The Alvarado’s picturesque flower farm features beautiful flowers like chrysanthemums, asthromelias, carnations, daisies, and baby’s breath, just to name a few. These buds bloom year-round in this climate, ensuring a magical experience- and photo opportunity- no matter when you choose to visit.\n" +
+            "\n" +
+            "\tFor even more adventure, the Alvarados provide the opportunity to ride horseback around their village, taking in the beauty of the flowers and coffee plants and the majesty of the surrounding forest. Spot local wildlife from horseback as you end the day on Finca de Hermana’s scenic riding trail. Spend a day at Finca de Hermana, and you may never want to leave. \n";
 
     private List<TimeOfOperation> mTimesOfOperation;
 
@@ -80,7 +76,7 @@ public class Destinations {
             addAnswers(destination);
             destination.setAbout(mAbout);
             setTimesOfOperation();
-            destination.setContactInfo(new ContactInfo(mTimesOfOperation, "3338 Winifred Way, South Hadley, Massachusetts, 01075", "765-664-0680", "oasisrange@gmail.com"));
+            destination.setContactInfo(new ContactInfo(mTimesOfOperation, "Ecuador", "765-664-0680", "fincadehermana@gmail.com"));
             createThingsToDo();
             destination.setThingsToDo(mThingsToDo);
             mDestinations.add(destination);
